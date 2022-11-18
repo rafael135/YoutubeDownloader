@@ -49,6 +49,12 @@ namespace Youtube_Downloader.Entities
                 var stream = await youtube.Videos.Streams.GetAsync(streamInfo); // Pego a leitura do video
                 await youtube.Videos.Streams.DownloadAsync(streamInfo, pathToSave);
             }
+            else
+            {
+                var streamInfo = streamManifest.GetAudioOnlyStreams().GetWithHighestBitrate();
+                var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
+                await youtube.Videos.Streams.DownloadAsync(streamInfo, pathToSave);
+            }
         }
 
         public bool CheckValidVideo(string link)

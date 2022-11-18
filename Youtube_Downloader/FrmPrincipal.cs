@@ -32,7 +32,11 @@ namespace Youtube_Downloader
 
         private void BtnDownload_Click(object sender, EventArgs e)
         {
-            if (CbxFormats.SelectedIndex == 0)
+            int selected = CbxFormats.SelectedIndex;
+
+            EnumVideoFormat videoFormat = selected == 0 ? EnumVideoFormat.MP4 : EnumVideoFormat.MP3;
+
+            if (videoFormat == EnumVideoFormat.MP4)
             {
                 SaveFileDialog saveDialog = new SaveFileDialog();
                 saveDialog.Filter = "MP4 Files | *.mp4";
@@ -48,7 +52,7 @@ namespace Youtube_Downloader
                     return;
                 }
 
-                youtubeVideo.DownloadVideo(path, EnumVideoFormat.MP4);
+                youtubeVideo.DownloadVideo(path, videoFormat);
             }
             else
             {
@@ -66,7 +70,7 @@ namespace Youtube_Downloader
                     return;
                 }
 
-                youtubeVideo.DownloadVideo(path, EnumVideoFormat.MP3);
+                youtubeVideo.DownloadVideo(path, videoFormat);
             }
         }
 

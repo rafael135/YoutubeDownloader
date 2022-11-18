@@ -8,7 +8,7 @@ namespace Youtube_Downloader.Entities
 {
     internal enum EnumVideoFormat
     {
-        MP3 = 0,
-        MP4 = 1
+        MP4 = 0,
+        MP3 = 1
     }
 }
