@@ -26,7 +26,7 @@ namespace Youtube_Downloader.Entities
             Link = link;
         }
 
-        public async void GetVideoInformation(Label lblTitle, Label lblAuthor, Label lblDuration)
+        public async void GetVideoInformation(Label lblTitle, Label lblAuthor, Label lblDuration, TextBox txtDescricao)
         {
             YoutubeClient youtube = new YoutubeClient();
 
@@ -35,6 +35,8 @@ namespace Youtube_Downloader.Entities
             lblTitle.Text = video.Title.ToString();
             lblAuthor.Text = video.Author.ChannelTitle.ToString();
             lblDuration.Text = video.Duration.ToString();
+            txtDescricao.Text = video.Description.ToString();
+            
         }
 
         public async void DownloadVideo(string pathToSave, EnumVideoFormat videoFormat)
@@ -48,6 +50,7 @@ namespace Youtube_Downloader.Entities
                 var streamInfo = streamManifest.GetMuxedStreams().GetWithHighestVideoQuality(); // Pego audio e video
                 var stream = await youtube.Videos.Streams.GetAsync(streamInfo); // Pego a leitura do video
                 await youtube.Videos.Streams.DownloadAsync(streamInfo, pathToSave);
+                
             }
             else
             {

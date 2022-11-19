@@ -33,14 +33,18 @@
             this.TxtLink = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LblDescricao = new System.Windows.Forms.Label();
+            this.TxtDescricao = new System.Windows.Forms.TextBox();
+            this.BtnDownload = new System.Windows.Forms.Button();
+            this.CbxFormats = new System.Windows.Forms.ComboBox();
             this.LblAuthorTxt = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.LblDurationOut = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.LblVideoTitle = new System.Windows.Forms.Label();
-            this.CbxFormats = new System.Windows.Forms.ComboBox();
-            this.BtnDownload = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // frmMenu1
@@ -49,7 +53,7 @@
             this.frmMenu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.frmMenu1.Location = new System.Drawing.Point(0, 0);
             this.frmMenu1.Name = "frmMenu1";
-            this.frmMenu1.Size = new System.Drawing.Size(417, 40);
+            this.frmMenu1.Size = new System.Drawing.Size(420, 40);
             this.frmMenu1.TabIndex = 0;
             // 
             // LblLink
@@ -84,6 +88,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.BtnDownload);
             this.panel1.Controls.Add(this.CbxFormats);
             this.panel1.Controls.Add(this.LblAuthorTxt);
@@ -94,8 +99,49 @@
             this.panel1.Controls.Add(this.lbl1);
             this.panel1.Location = new System.Drawing.Point(12, 112);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(393, 194);
+            this.panel1.Size = new System.Drawing.Size(393, 296);
             this.panel1.TabIndex = 4;
+            // 
+            // LblDescricao
+            // 
+            this.LblDescricao.Location = new System.Drawing.Point(0, 1);
+            this.LblDescricao.Name = "LblDescricao";
+            this.LblDescricao.Size = new System.Drawing.Size(386, 25);
+            this.LblDescricao.TabIndex = 12;
+            this.LblDescricao.Text = "Descricao";
+            this.LblDescricao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TxtDescricao
+            // 
+            this.TxtDescricao.Location = new System.Drawing.Point(3, 29);
+            this.TxtDescricao.Multiline = true;
+            this.TxtDescricao.Name = "TxtDescricao";
+            this.TxtDescricao.Size = new System.Drawing.Size(383, 116);
+            this.TxtDescricao.TabIndex = 11;
+            // 
+            // BtnDownload
+            // 
+            this.BtnDownload.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnDownload.Location = new System.Drawing.Point(131, 111);
+            this.BtnDownload.Name = "BtnDownload";
+            this.BtnDownload.Size = new System.Drawing.Size(259, 28);
+            this.BtnDownload.TabIndex = 10;
+            this.BtnDownload.Text = "Download";
+            this.BtnDownload.UseVisualStyleBackColor = true;
+            this.BtnDownload.Click += new System.EventHandler(this.BtnDownload_Click);
+            // 
+            // CbxFormats
+            // 
+            this.CbxFormats.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxFormats.FormattingEnabled = true;
+            this.CbxFormats.Items.AddRange(new object[] {
+            "MP4",
+            "MP3"});
+            this.CbxFormats.Location = new System.Drawing.Point(4, 111);
+            this.CbxFormats.Name = "CbxFormats";
+            this.CbxFormats.Size = new System.Drawing.Size(121, 28);
+            this.CbxFormats.TabIndex = 9;
+            this.CbxFormats.Text = "Select Format";
             // 
             // LblAuthorTxt
             // 
@@ -147,35 +193,20 @@
             this.LblVideoTitle.Text = "||||";
             this.LblVideoTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CbxFormats
+            // panel2
             // 
-            this.CbxFormats.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CbxFormats.FormattingEnabled = true;
-            this.CbxFormats.Items.AddRange(new object[] {
-            "MP4",
-            "MP3"});
-            this.CbxFormats.Location = new System.Drawing.Point(4, 111);
-            this.CbxFormats.Name = "CbxFormats";
-            this.CbxFormats.Size = new System.Drawing.Size(121, 28);
-            this.CbxFormats.TabIndex = 9;
-            this.CbxFormats.Text = "Select Format";
-            // 
-            // BtnDownload
-            // 
-            this.BtnDownload.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnDownload.Location = new System.Drawing.Point(131, 111);
-            this.BtnDownload.Name = "BtnDownload";
-            this.BtnDownload.Size = new System.Drawing.Size(259, 28);
-            this.BtnDownload.TabIndex = 10;
-            this.BtnDownload.Text = "Download";
-            this.BtnDownload.UseVisualStyleBackColor = true;
-            this.BtnDownload.Click += new System.EventHandler(this.BtnDownload_Click);
+            this.panel2.Controls.Add(this.LblDescricao);
+            this.panel2.Controls.Add(this.TxtDescricao);
+            this.panel2.Location = new System.Drawing.Point(4, 145);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(386, 148);
+            this.panel2.TabIndex = 13;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 318);
+            this.ClientSize = new System.Drawing.Size(420, 420);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TxtLink);
             this.Controls.Add(this.LblLink);
@@ -187,6 +218,8 @@
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +239,8 @@
         private Label lbl2;
         private ComboBox CbxFormats;
         private Button BtnDownload;
+        private TextBox TxtDescricao;
+        private Label LblDescricao;
+        private Panel panel2;
     }
 }

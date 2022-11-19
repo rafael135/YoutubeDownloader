@@ -18,7 +18,7 @@ namespace Youtube_Downloader
             {
                 youtubeVideo = new YoutubeVideo(TxtLink.Text);
 
-                youtubeVideo.GetVideoInformation(LblVideoTitle, LblAuthorTxt, LblDurationOut);
+                youtubeVideo.GetVideoInformation(LblVideoTitle, LblAuthorTxt, LblDurationOut, TxtDescricao);
 
                 //LblVideoTitle.Text = youtubeVideo.Title;
                 //LblDurationOut.Text = youtubeVideo.Duration.ToString();
