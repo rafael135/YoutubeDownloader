@@ -77,6 +77,7 @@ namespace Youtube_Downloader
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             CbxFormats.SelectedIndex = 0;
+            frmMenu1.formLoaded();
         }
     }
 }

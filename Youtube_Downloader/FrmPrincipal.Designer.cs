@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.frmMenu1 = new Youtube_Downloader.Controllers.FrmMenu();
-            this.LblLink = new System.Windows.Forms.Label();
             this.TxtLink = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.LblDescricao = new System.Windows.Forms.Label();
             this.TxtDescricao = new System.Windows.Forms.TextBox();
             this.BtnDownload = new System.Windows.Forms.Button();
@@ -42,36 +41,18 @@
             this.LblDurationOut = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.LblVideoTitle = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.frmMenu1 = new Youtube_Downloader.Controllers.FrmMenu();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // frmMenu1
-            // 
-            this.frmMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.frmMenu1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.frmMenu1.Location = new System.Drawing.Point(0, 0);
-            this.frmMenu1.Name = "frmMenu1";
-            this.frmMenu1.Size = new System.Drawing.Size(420, 40);
-            this.frmMenu1.TabIndex = 0;
-            // 
-            // LblLink
-            // 
-            this.LblLink.AutoSize = true;
-            this.LblLink.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblLink.Location = new System.Drawing.Point(77, 66);
-            this.LblLink.Name = "LblLink";
-            this.LblLink.Size = new System.Drawing.Size(33, 17);
-            this.LblLink.TabIndex = 1;
-            this.LblLink.Text = "Link:";
-            // 
             // TxtLink
             // 
             this.TxtLink.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtLink.Location = new System.Drawing.Point(115, 63);
+            this.TxtLink.Location = new System.Drawing.Point(89, 103);
             this.TxtLink.Name = "TxtLink";
-            this.TxtLink.Size = new System.Drawing.Size(225, 25);
+            this.TxtLink.PlaceholderText = "Link";
+            this.TxtLink.Size = new System.Drawing.Size(346, 25);
             this.TxtLink.TabIndex = 2;
             this.TxtLink.TextChanged += new System.EventHandler(this.TxtLink_TextChanged);
             this.TxtLink.Leave += new System.EventHandler(this.TxtLink_Leave);
@@ -80,7 +61,8 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.Location = new System.Drawing.Point(3, 17);
+            this.lbl1.ForeColor = System.Drawing.Color.White;
+            this.lbl1.Location = new System.Drawing.Point(3, 16);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(50, 20);
             this.lbl1.TabIndex = 3;
@@ -97,14 +79,24 @@
             this.panel1.Controls.Add(this.lbl3);
             this.panel1.Controls.Add(this.LblVideoTitle);
             this.panel1.Controls.Add(this.lbl1);
-            this.panel1.Location = new System.Drawing.Point(12, 112);
+            this.panel1.Location = new System.Drawing.Point(66, 148);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(393, 296);
             this.panel1.TabIndex = 4;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.LblDescricao);
+            this.panel2.Controls.Add(this.TxtDescricao);
+            this.panel2.Location = new System.Drawing.Point(4, 144);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(386, 148);
+            this.panel2.TabIndex = 13;
+            // 
             // LblDescricao
             // 
-            this.LblDescricao.Location = new System.Drawing.Point(0, 1);
+            this.LblDescricao.ForeColor = System.Drawing.Color.White;
+            this.LblDescricao.Location = new System.Drawing.Point(0, 0);
             this.LblDescricao.Name = "LblDescricao";
             this.LblDescricao.Size = new System.Drawing.Size(386, 25);
             this.LblDescricao.TabIndex = 12;
@@ -113,16 +105,17 @@
             // 
             // TxtDescricao
             // 
-            this.TxtDescricao.Location = new System.Drawing.Point(3, 29);
+            this.TxtDescricao.Location = new System.Drawing.Point(3, 28);
             this.TxtDescricao.Multiline = true;
             this.TxtDescricao.Name = "TxtDescricao";
+            this.TxtDescricao.ReadOnly = true;
             this.TxtDescricao.Size = new System.Drawing.Size(383, 116);
             this.TxtDescricao.TabIndex = 11;
             // 
             // BtnDownload
             // 
             this.BtnDownload.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnDownload.Location = new System.Drawing.Point(131, 111);
+            this.BtnDownload.Location = new System.Drawing.Point(131, 110);
             this.BtnDownload.Name = "BtnDownload";
             this.BtnDownload.Size = new System.Drawing.Size(259, 28);
             this.BtnDownload.TabIndex = 10;
@@ -137,7 +130,7 @@
             this.CbxFormats.Items.AddRange(new object[] {
             "MP4",
             "MP3"});
-            this.CbxFormats.Location = new System.Drawing.Point(4, 111);
+            this.CbxFormats.Location = new System.Drawing.Point(4, 110);
             this.CbxFormats.Name = "CbxFormats";
             this.CbxFormats.Size = new System.Drawing.Size(121, 28);
             this.CbxFormats.TabIndex = 9;
@@ -146,7 +139,8 @@
             // LblAuthorTxt
             // 
             this.LblAuthorTxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblAuthorTxt.Location = new System.Drawing.Point(65, 43);
+            this.LblAuthorTxt.ForeColor = System.Drawing.Color.White;
+            this.LblAuthorTxt.Location = new System.Drawing.Point(65, 42);
             this.LblAuthorTxt.Name = "LblAuthorTxt";
             this.LblAuthorTxt.Size = new System.Drawing.Size(325, 17);
             this.LblAuthorTxt.TabIndex = 8;
@@ -157,7 +151,8 @@
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl2.Location = new System.Drawing.Point(4, 44);
+            this.lbl2.ForeColor = System.Drawing.Color.White;
+            this.lbl2.Location = new System.Drawing.Point(4, 43);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(57, 20);
             this.lbl2.TabIndex = 7;
@@ -166,7 +161,8 @@
             // LblDurationOut
             // 
             this.LblDurationOut.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblDurationOut.Location = new System.Drawing.Point(65, 72);
+            this.LblDurationOut.ForeColor = System.Drawing.Color.White;
+            this.LblDurationOut.Location = new System.Drawing.Point(65, 71);
             this.LblDurationOut.Name = "LblDurationOut";
             this.LblDurationOut.Size = new System.Drawing.Size(325, 17);
             this.LblDurationOut.TabIndex = 6;
@@ -177,7 +173,8 @@
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl3.Location = new System.Drawing.Point(3, 72);
+            this.lbl3.ForeColor = System.Drawing.Color.White;
+            this.lbl3.Location = new System.Drawing.Point(3, 71);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(68, 20);
             this.lbl3.TabIndex = 5;
@@ -186,31 +183,32 @@
             // LblVideoTitle
             // 
             this.LblVideoTitle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblVideoTitle.Location = new System.Drawing.Point(65, 17);
+            this.LblVideoTitle.ForeColor = System.Drawing.Color.White;
+            this.LblVideoTitle.Location = new System.Drawing.Point(65, 16);
             this.LblVideoTitle.Name = "LblVideoTitle";
             this.LblVideoTitle.Size = new System.Drawing.Size(325, 17);
             this.LblVideoTitle.TabIndex = 4;
             this.LblVideoTitle.Text = "||||";
             this.LblVideoTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // frmMenu1
             // 
-            this.panel2.Controls.Add(this.LblDescricao);
-            this.panel2.Controls.Add(this.TxtDescricao);
-            this.panel2.Location = new System.Drawing.Point(4, 145);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(386, 148);
-            this.panel2.TabIndex = 13;
+            this.frmMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.frmMenu1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.frmMenu1.Location = new System.Drawing.Point(0, 0);
+            this.frmMenu1.Name = "frmMenu1";
+            this.frmMenu1.Size = new System.Drawing.Size(524, 80);
+            this.frmMenu1.TabIndex = 5;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 420);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(524, 456);
+            this.Controls.Add(this.frmMenu1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TxtLink);
-            this.Controls.Add(this.LblLink);
-            this.Controls.Add(this.frmMenu1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -226,9 +224,6 @@
         }
 
         #endregion
-
-        private Controllers.FrmMenu frmMenu1;
-        private Label LblLink;
         private TextBox TxtLink;
         private Label lbl1;
         private Panel panel1;
@@ -242,5 +237,6 @@
         private TextBox TxtDescricao;
         private Label LblDescricao;
         private Panel panel2;
+        private Controllers.FrmMenu frmMenu1;
     }
 }

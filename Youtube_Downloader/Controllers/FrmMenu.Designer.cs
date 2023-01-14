@@ -28,57 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnClose = new System.Windows.Forms.Button();
-            this.BtnMinimize = new System.Windows.Forms.Button();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
+            this.lblFormName = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.SuspendLayout();
             // 
-            // BtnClose
+            // picClose
             // 
-            this.BtnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.ForeColor = System.Drawing.Color.White;
-            this.BtnClose.Location = new System.Drawing.Point(480, 0);
-            this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(40, 40);
-            this.BtnClose.TabIndex = 0;
-            this.BtnClose.Text = "X";
-            this.BtnClose.UseVisualStyleBackColor = true;
-            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.BackgroundImage = global::Youtube_Downloader.Properties.Resources.close;
+            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picClose.Location = new System.Drawing.Point(385, 0);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(40, 40);
+            this.picClose.TabIndex = 0;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.MouseLeave += new System.EventHandler(this.picClose_MouseLeave);
+            this.picClose.MouseHover += new System.EventHandler(this.picClose_MouseHover);
             // 
-            // BtnMinimize
+            // picMinimize
             // 
-            this.BtnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimize.ForeColor = System.Drawing.Color.White;
-            this.BtnMinimize.Location = new System.Drawing.Point(440, 0);
-            this.BtnMinimize.Name = "BtnMinimize";
-            this.BtnMinimize.Size = new System.Drawing.Size(40, 40);
-            this.BtnMinimize.TabIndex = 1;
-            this.BtnMinimize.Text = "__";
-            this.BtnMinimize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnMinimize.UseVisualStyleBackColor = true;
-            this.BtnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.BackgroundImage = global::Youtube_Downloader.Properties.Resources.minimize;
+            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMinimize.Location = new System.Drawing.Point(346, 0);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(40, 40);
+            this.picMinimize.TabIndex = 1;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
+            this.picMinimize.MouseLeave += new System.EventHandler(this.picMinimize_MouseLeave);
+            this.picMinimize.MouseHover += new System.EventHandler(this.picMinimize_MouseHover);
+            // 
+            // lblFormName
+            // 
+            this.lblFormName.AutoSize = true;
+            this.lblFormName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFormName.ForeColor = System.Drawing.Color.White;
+            this.lblFormName.Location = new System.Drawing.Point(15, 13);
+            this.lblFormName.Name = "lblFormName";
+            this.lblFormName.Size = new System.Drawing.Size(87, 18);
+            this.lblFormName.TabIndex = 2;
+            this.lblFormName.Text = "FormName";
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.Controls.Add(this.BtnMinimize);
-            this.Controls.Add(this.BtnClose);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.Controls.Add(this.lblFormName);
+            this.Controls.Add(this.picMinimize);
+            this.Controls.Add(this.picClose);
             this.Name = "FrmMenu";
-            this.Size = new System.Drawing.Size(520, 40);
+            this.Size = new System.Drawing.Size(425, 80);
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMenu_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMenu_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMenu_MouseUp);
+            this.Validated += new System.EventHandler(this.FrmMenu_Validated);
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Button BtnClose;
-        private Button BtnMinimize;
+        private PictureBox picClose;
+        private PictureBox picMinimize;
+        private Label lblFormName;
     }
 }
